@@ -28,6 +28,8 @@ INSTALLED_APPS = [
     
     # Custom apps
     'users',
+    'applications',
+    'services',
 ]
 
 MIDDLEWARE = [
