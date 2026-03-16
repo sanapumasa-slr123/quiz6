@@ -9,51 +9,64 @@ import DetailScreen from './screens/DetailScreen';
 import ApplySeller from './screens/ApplySeller';
 import SellerDashboard from './screens/SellerDashboard';
 import UserProfile from './screens/UserProfile';
+import UserScreen from './screens/UserScreen';
 import ProtectedRoute from './components/ProtectedRoute';
+import Chatbot from './components/Chatbot';
 import './App.css';
 
 function AppContent() {
   const { userInfo } = useSelector((state) => state.user);
 
   return (
-    <Router>
-      <Routes>
-        <Route
-          path="/signin"
-          element={userInfo ? <Navigate to="/" /> : <SignIn />}
-        />
-        <Route
-          path="/register"
-          element={userInfo ? <Navigate to="/" /> : <SignUp />}
-        />
-        <Route path="/" element={<HomeScreen />} />
-        <Route path="/services/:id" element={<DetailScreen />} />
-        <Route
-          path="/apply"
-          element={
-            <ProtectedRoute>
-              <ApplySeller />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/seller/dashboard"
-          element={
-            <ProtectedRoute requiredRole="seller">
-              <SellerDashboard />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/profile"
-          element={
-            <ProtectedRoute>
-              <UserProfile />
-            </ProtectedRoute>
-          }
-        />
-      </Routes>
-    </Router>
+    <div>
+      <Router>
+        <Routes>
+          <Route
+            path="/signin"
+            element={userInfo ? <Navigate to="/" /> : <SignIn />}
+          />
+          <Route
+            path="/register"
+            element={userInfo ? <Navigate to="/" /> : <SignUp />}
+          />
+          <Route path="/" element={<HomeScreen />} />
+          <Route path="/services/:id" element={<DetailScreen />} />
+          <Route
+            path="/apply"
+            element={
+              <ProtectedRoute>
+                <ApplySeller />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/seller/dashboard"
+            element={
+              <ProtectedRoute requiredRole="seller">
+                <SellerDashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute>
+                <UserProfile />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/users"
+            element={
+              <ProtectedRoute requiredRole="admin">
+                <UserScreen />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+      </Router>
+      {userInfo && <Chatbot />}
+    </div>
   );
 }
 

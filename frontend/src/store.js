@@ -3,6 +3,7 @@ import { userReducer } from './reducers/userReducer';
 import { serviceReducer } from './reducers/serviceReducer';
 import { applicationReducer } from './reducers/applicationReducer';
 import { orderReducer } from './reducers/orderReducer';
+import { chatReducer } from './reducers/chatReducer';
 
 const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ const store = configureStore({
     service: serviceReducer,
     application: applicationReducer,
     order: orderReducer,
+    chat: chatReducer,
   },
 });
 
