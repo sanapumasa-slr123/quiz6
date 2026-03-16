@@ -11,6 +11,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+/* Auth Screens */
 .signin-container,
 .signup-container {
   max-width: 400px;
@@ -28,7 +29,8 @@ form {
 }
 
 input,
-select {
+select,
+textarea {
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -59,6 +61,11 @@ button:disabled {
   margin-bottom: 10px;
 }
 
+.success {
+  color: green;
+  margin-bottom: 10px;
+}
+
 a {
   color: #007bff;
   text-decoration: none;
@@ -66,4 +73,158 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+/* Home Screen */
+.home-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.service-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.service-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.service-card h3,
+.service-card p {
+  margin: 10px;
+  padding: 0;
+}
+
+.service-card .price {
+  font-weight: bold;
+  color: #28a745;
+}
+
+.service-card .rating {
+  color: #ff9800;
+}
+
+.service-card .seller {
+  font-size: 12px;
+  color: #666;
+}
+
+/* Detail Screen */
+.detail-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.detail-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.detail-image {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.detail-info h2 {
+  margin-top: 0;
+}
+
+.seller {
+  color: #666;
+  font-style: italic;
+}
+
+.avail-btn {
+  background-color: #28a745;
+  padding: 15px 30px;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.avail-btn:hover {
+  background-color: #218838;
+}
+
+/* Apply Screen */
+.apply-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Seller Dashboard */
+.seller-dashboard {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.add-service-form {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.add-service-form form {
+  max-width: 600px;
+}
+
+.services-list table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.services-list table th,
+.services-list table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.services-list table th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+.services-list table button {
+  margin-right: 10px;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .detail-content {
+    grid-template-columns: 1fr;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
 }
