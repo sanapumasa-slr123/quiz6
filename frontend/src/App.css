@@ -219,6 +219,26 @@ a:hover {
   font-size: 14px;
 }
 
+/* User Profile */
+.profile-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.user-info {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.order-history {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+}
+
 @media (max-width: 768px) {
   .detail-content {
     grid-template-columns: 1fr;

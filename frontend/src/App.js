@@ -8,6 +8,7 @@ import HomeScreen from './screens/HomeScreen';
 import DetailScreen from './screens/DetailScreen';
 import ApplySeller from './screens/ApplySeller';
 import SellerDashboard from './screens/SellerDashboard';
+import UserProfile from './screens/UserProfile';
 import ProtectedRoute from './components/ProtectedRoute';
 import './App.css';
 
@@ -40,6 +41,14 @@ function AppContent() {
           element={
             <ProtectedRoute requiredRole="seller">
               <SellerDashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <UserProfile />
             </ProtectedRoute>
           }
         />
